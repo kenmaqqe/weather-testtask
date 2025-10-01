@@ -1,0 +1,278 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  min-height: 100vh;
+  transition: background 0.6s ease;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  max-width: 500px;
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.backBtn {
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.weatherCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.cityName {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.weatherIcon {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.temperature {
+  font-size: 4rem;
+  margin: 0;
+  color: #34495e;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.description {
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  margin: 1rem 0 2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.detailItem:hover {
+  transform: translateY(-5px);
+}
+
+.detailIcon {
+  font-size: 2rem;
+}
+
+.detailLabel {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.detailValue {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.errorCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.errorCard h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e74c3c;
+}
+
+.errorCard p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  height: 48px;
+  font-weight: 600;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .cityName {
+    font-size: 2rem;
+  }
+  
+  .temperature {
+    font-size: 3.5rem;
+  }
+  
+  .description {
+    font-size: 1.3rem;
+  }
+  
+  .weatherCard {
+    padding: 2rem;
+  }
+  
+  .weatherIcon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .details {
+    gap: 1rem;
+  }
+  
+  .detailItem {
+    padding: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .cityName {
+    font-size: 1.75rem;
+  }
+  
+  .temperature {
+    font-size: 3rem;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+  }
+  
+  .weatherCard {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .weatherIcon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .detailItem {
+    padding: 1rem;
+  }
+  
+  .detailValue {
+    font-size: 1.3rem;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+  
+  .errorCard {
+    padding: 2rem;
+  }
+  
+  .backBtn {
+    width: 100%;
+  }
+}
